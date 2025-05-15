@@ -46,5 +46,8 @@ async function main() {
     console.error("error", error.message);
   }
 }
-//llamado de la funcion
-main();
+
+//Se exporta la funcion para poder ser usada en otro archivo
+module.exports = {
+  main,
+};
