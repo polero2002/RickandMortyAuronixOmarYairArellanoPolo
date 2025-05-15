@@ -20,17 +20,31 @@ async function getcharacters() {
 }
 
 //Función para filtrar los personajes vivos
-function filtercharacters(Characters){
-    return Characters.filter(c => c.status === 'Alive');
+function filtercharacters(Characters) {
+  return Characters.filter((c) => c.status === "Alive");
 }
 
 //Función para dar formato al json de resultados
-function formatcharacters(Characters){
-    return Characters.map((c) => ({
-        id: c.id,
-        name: c.name.replace(/ /g,"_"),
-        status: c.status,
-        gender: c.gender,
-    }))
+function formatcharacters(Characters) {
+  return Characters.map((c) => ({
+    id: c.id,
+    name: c.name.replace(/ /g, "_"),
+    status: c.status,
+    gender: c.gender,
+  }));
 }
 
+//Función asincrona principal que usa todas las funciones hasta llegar al resultado esperado
+async function main() {
+  try {
+    const characters = await getcharacters();
+    const charactersfilter = filtercharacters(characters);
+    const charactersformat = formatcharacters(charactersfilter);
+
+    console.log({ results: charactersformat });
+  } catch (error) {
+    console.error("error", error.message);
+  }
+}
+//llamado de la funcion
+main();
