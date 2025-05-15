@@ -36,15 +36,12 @@ function formatcharacters(Characters) {
 
 //Función asincrona principal que usa todas las funciones hasta llegar al resultado esperado
 async function main() {
-  try {
+  
     const characters = await getcharacters();
     const charactersfilter = filtercharacters(characters);
     const charactersformat = formatcharacters(charactersfilter);
 
     console.log({ results: charactersformat });
-  } catch (error) {
-    console.error("error", error.message);
-  }
 }
 
 //Se exporta la funcion para poder ser usada en otro archivo
