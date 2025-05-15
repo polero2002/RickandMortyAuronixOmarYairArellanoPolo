@@ -24,5 +24,13 @@ function filtercharacters(Characters){
     return Characters.filter(c => c.status === 'Alive');
 }
 
-
+//Función para dar formato al json de resultados
+function formatcharacters(Characters){
+    return Characters.map((c) => ({
+        id: c.id,
+        name: c.name.replace(/ /g,"_"),
+        status: c.status,
+        gender: c.gender,
+    }))
+}
 
