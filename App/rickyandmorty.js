@@ -4,7 +4,7 @@
 //URL BASE DE LA API ORIGINAL
 const API_URL = "https://rickandmortyapi.com/api/character";
 
-//Funcion asincrona para obtener los datos de los personajes
+//Función asincrona para obtener los datos de los personajes
 async function getcharacters() {
   const response = await fetch(API_URL);
 
@@ -18,5 +18,11 @@ async function getcharacters() {
 
   return data.results;
 }
+
+//Función para filtrar los personajes vivos
+function filtercharacters(Characters){
+    return Characters.filter(c => c.status === 'Alive');
+}
+
 
 
