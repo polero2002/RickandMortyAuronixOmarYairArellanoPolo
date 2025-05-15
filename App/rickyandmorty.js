@@ -41,7 +41,7 @@ async function main() {
     const charactersfilter = filtercharacters(characters);
     const charactersformat = formatcharacters(charactersfilter);
 
-    console.log({ results: charactersformat });
+    return{ results: charactersformat };
 }
 
 //Se exporta la funcion para poder ser usada en otro archivo
