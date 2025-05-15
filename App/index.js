@@ -6,3 +6,6 @@ const { main } = require("./rickyandmorty");
 
 // Inicializamos la aplicación de Express
 const app = express();
+
+// Se define el puerto donde se va a escuchar el server
+const PORT = 3000;
