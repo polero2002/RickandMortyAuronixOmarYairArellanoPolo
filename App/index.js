@@ -9,7 +9,7 @@ const app = express();
 
 // Se define el puerto donde se va a escuchar el server
 const PORT = 3000;
-// definimos el endpoint /personajes con el metodo get para acceder a los personajes filtrados y formateados
+// definimos el endpoint /characters con el metodo get para acceder a los personajes filtrados y formateados
 app.get("/characters", async (req,res) => {
   try {
     // llamamos a la funcion main
