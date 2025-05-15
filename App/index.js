@@ -22,3 +22,7 @@ app.get("/characters", async (req,res) => {
     res.status(500).json({ error: error.message });
   }
 });
+// Se inicia el server
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
